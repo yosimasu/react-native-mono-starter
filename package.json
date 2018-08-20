@@ -1,0 +1,26 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "app",
+      "modules/*"
+    ]
+  },
+  "scripts": {
+    "app:android": "lerna run --scope app --stream android",
+    "app:clean": "lerna run --scope app --stream clean",
+    "app:ios": "lerna run --scope app --stream ios",
+    "app:start": "lerna run --scope app --stream start",
+    "clean": "lerna run --scope app --stream clean; lerna clean --yes; shx rm -rf node_modules"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0-beta.47",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "eslint": "^4.0.0",
+    "find-root": "^1.1.0",
+    "lerna": "^3.1.1",
+    "shelljs": "^0.8.2",
+    "shx": "^0.3.2"
+  }
+}

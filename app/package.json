@@ -1,0 +1,28 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "android:clean": "cd android; ./gradlew clean",
+    "clean": "yarn android:clean; yarn ios:clean",
+    "ios": "react-native run-ios",
+    "ios:clean": "cd ios; shx rm -rf build",
+    "postinstall": "node ./scripts/link.js",
+    "start": "react-native start --reset-cache --config ../../../../app/rn-cli.config.js",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "dependencies": {
+    "react": "16.3.1",
+    "react-native": "0.55.4"
+  },
+  "devDependencies": {
+    "babel-preset-react-native-stage-0": "1.0.1",
+    "jest": "23.5.0",
+    "jest-react-native": "18.0.0",
+    "react-test-renderer": "16.3.1"
+  }
+}
