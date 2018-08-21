@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "react-native-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "ios": "react-native run-ios",
     "ios:clean": "cd ios; shx rm -rf build",
     "postinstall": "node ./scripts/link.js",
+    "rename": "react-native-rename",
     "start": "react-native start --reset-cache --config ../../../../app/rn-cli.config.js",
     "test": "jest"
   },
@@ -23,6 +24,7 @@
     "babel-preset-react-native-stage-0": "1.0.1",
     "jest": "23.5.0",
     "jest-react-native": "18.0.0",
+    "react-native-rename": "2.2.2",
     "react-test-renderer": "16.3.1"
   }
 }
