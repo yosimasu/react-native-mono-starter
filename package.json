@@ -9,8 +9,8 @@
   },
   "scripts": {
     "app:clean": "lerna run --scope react-native-app --stream clean",
-    "install:android": "lerna run --scope react-native-app --stream android",
-    "install:ios": "lerna run --scope react-native-app --stream ios",
+    "install:android": "lerna run --scope react-native-app --stream android --",
+    "install:ios": "lerna run --scope react-native-app --stream ios --",
     "start": "lerna run --scope react-native-app --stream start -- --reset-cache",
     "clean": "lerna run --scope react-native-app --stream clean; lerna clean --yes; shx rm -rf node_modules",
     "rename": "lerna run --scope react-native-app --stream rename --"
