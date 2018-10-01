@@ -10,7 +10,7 @@ module.exports = function(plop) {
 
     const dirname = `${BASE_DIR}/${featureName}`;
     if (fs.existsSync(dirname)) {
-      throw new Error(`feature ${featureName} exists`);
+      return `feature ${featureName} exists`;
     }
 
     let filename;
