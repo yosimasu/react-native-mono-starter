@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from '@modules/components';
 
 export default class App extends React.Component {
   render() {
