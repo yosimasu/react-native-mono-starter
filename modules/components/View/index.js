@@ -1,3 +1,3 @@
-import { View } from 'react-native';
+import Component from './component';
 
-export default View;
+export default Component;

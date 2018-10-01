@@ -11,7 +11,8 @@
     "postinstall": "node ./scripts/link.js",
     "rename": "react-native-rename",
     "start": "react-native start --reset-cache --config ../../../../app/rn-cli.config.js",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "storybook start --port 7007 --reset-cache --projectRoots ../"
   },
   "jest": {
     "preset": "react-native"
@@ -21,9 +22,17 @@
     "react-native": "0.55.4"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "3.4.11",
+    "@storybook/addon-links": "3.4.11",
+    "@storybook/addons": "3.4.11",
+    "@storybook/react-native": "3.4.11",
+    "babel-core": "^6.26.3",
     "babel-preset-react-native-stage-0": "1.0.1",
+    "babel-runtime": "6.26.0",
     "jest": "23.5.0",
     "jest-react-native": "18.0.0",
+    "prop-types": "^15.6.2",
+    "react-dom": "16.3.1",
     "react-native-rename": "2.2.2",
     "react-test-renderer": "16.3.1"
   }

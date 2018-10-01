@@ -1,3 +1,3 @@
-import { Text } from 'react-native';
+import Component from './component';
 
-export default Text;
+export default Component;

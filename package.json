@@ -13,7 +13,8 @@
     "install:ios": "lerna run --scope react-native-app --stream ios --",
     "start": "lerna run --scope react-native-app --stream start -- --reset-cache",
     "clean": "lerna run --scope react-native-app --stream clean; lerna clean --yes; shx rm -rf node_modules",
-    "rename": "lerna run --scope react-native-app --stream rename --"
+    "rename": "lerna run --scope react-native-app --stream rename --",
+    "storybook": "lerna run --scope react-native-app --stream storybook --"
   },
   "devDependencies": {
     "@babel/core": "7.0.0-beta.47",
