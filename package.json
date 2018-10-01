@@ -1,6 +1,10 @@
 {
   "name": "root",
+  "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=8.9.0 <=8.12.0"
+  },
   "workspaces": {
     "packages": [
       "app",
@@ -13,14 +17,20 @@
     "install:ios": "lerna run --scope react-native-app --stream ios --",
     "start": "lerna run --scope react-native-app --stream start -- --reset-cache",
     "clean": "lerna run --scope react-native-app --stream clean; lerna clean --yes; shx rm -rf node_modules",
-    "rename": "lerna run --scope react-native-app --stream rename --"
+    "rename": "lerna run --scope react-native-app --stream rename --",
+    "storybook": "lerna run --scope react-native-app --stream storybook --"
   },
   "devDependencies": {
     "@babel/core": "7.0.0-beta.47",
     "babel-plugin-module-resolver": "3.1.1",
     "eslint": "4.19.1",
     "find-root": "1.1.0",
+    "fs-extra": "7.0.0",
+    "glob": "7.1.3",
+    "inquirer-directory": "2.1.0",
     "lerna": "3.1.2",
+    "plop": "2.1.0",
+    "require-all": "3.0.0",
     "shelljs": "0.8.2",
     "shx": "0.3.2"
   }
