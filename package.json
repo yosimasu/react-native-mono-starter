@@ -15,13 +15,14 @@
     "app:clean": "lerna run --scope react-native-app --stream clean",
     "install:android": "lerna run --scope react-native-app --stream android --",
     "install:ios": "lerna run --scope react-native-app --stream ios --",
-    "start": "lerna run --scope react-native-app --stream start -- --reset-cache",
+    "start": "lerna run --scope react-native-app --stream start --",
     "clean": "lerna run --scope react-native-app --stream clean; lerna clean --yes; shx rm -rf node_modules",
     "rename": "lerna run --scope react-native-app --stream rename --",
     "storybook": "lerna run --scope react-native-app --stream storybook --"
   },
   "devDependencies": {
-    "@babel/core": "7.0.0-beta.47",
+    "@babel/core": "^7.0.0-0",
+    "@babel/runtime": "7.1.2",
     "babel-plugin-module-resolver": "3.1.1",
     "eslint": "4.19.1",
     "find-root": "1.1.0",

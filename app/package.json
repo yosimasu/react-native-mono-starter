@@ -10,31 +10,31 @@
     "ios:clean": "cd ios; shx rm -rf build",
     "postinstall": "node ./scripts/link.js && rndebugger-open",
     "rename": "react-native-rename",
-    "start": "react-native start --reset-cache --config ../../../../app/rn-cli.config.js",
-    "test": "jest",
-    "storybook": "storybook start --port 7007 --reset-cache --projectRoots ../"
-  },
-  "jest": {
-    "preset": "react-native"
+    "start": "node node_modules/react-native/local-cli/cli.js start --reset-cache --config ../../../../app/metro.config.js",
+    "storybook": "concurrently \"storybook start -p 7007 --skip-packager\" \"node node_modules/react-native/local-cli/cli.js start --reset-cache --config ../../../../app/metro.storybook.config.js\"",
+    "test": "jest"
   },
   "dependencies": {
-    "react": "16.3.1",
-    "react-native": "0.55.4"
+    "react": "16.5.0",
+    "react-native": "0.57.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "3.4.11",
     "@storybook/addon-links": "3.4.11",
     "@storybook/addons": "3.4.11",
     "@storybook/react-native": "3.4.11",
-    "babel-core": "6.26.3",
-    "babel-preset-react-native-stage-0": "1.0.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "23.6.0",
     "babel-runtime": "6.26.0",
-    "jest": "23.5.0",
-    "jest-react-native": "18.0.0",
-    "prop-types": "15.6.2",
-    "react-dom": "16.3.1",
+    "concurrently": "4.0.1",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.47.0",
+    "react-dom": "16.5.0",
     "react-native-debugger-open": "0.3.17",
     "react-native-rename": "2.2.2",
-    "react-test-renderer": "16.3.1"
+    "react-test-renderer": "16.5.0"
+  },
+  "jest": {
+    "preset": "react-native"
   }
 }
