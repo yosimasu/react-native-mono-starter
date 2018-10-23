@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react-native';
 
 import Text from './component';
 
-const name = '@modules/components/Text';
+const name = 'modules/components/Text/component';
 
 const load = () => {
   const story = storiesOf(name, module);
@@ -13,7 +13,6 @@ const load = () => {
   story.add('default', () => {
     return <Text>Text</Text>;
   });
-
 };
 
 export { name, load };

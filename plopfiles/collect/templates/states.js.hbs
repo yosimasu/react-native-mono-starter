@@ -1,0 +1,9 @@
+{{#each collections}}
+import {{@key}} from '{{this}}';
+{{/each}}
+
+export default [
+{{#each collections}}
+  {{@key}},
+{{/each}}
+];
