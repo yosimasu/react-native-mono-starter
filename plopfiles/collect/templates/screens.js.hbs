@@ -1,0 +1,27 @@
+import { registerScreen } from '@modules/core';
+
+import { FEATURE } from './constants';
+
+const screens = {};
+
+{{#each collections}}
+const {{this.declare}} = require('{{this.component}}').default;
+
+registerScreen(
+  `${FEATURE.toUpperCase()}/{{@key}}`,
+  {
+    screen: {{this.declare}},
+    ga: {{this.declare}}.ga,
+    top: {{this.declare}}.top,
+  }
+);
+
+screens[`${FEATURE.toUpperCase()}/{{@key}}`] = {
+  screen: {{this.declare}},
+  ga: {{this.declare}}.ga,
+  top: {{this.declare}}.top,
+};
+
+{{/each}}
+
+export default screens;

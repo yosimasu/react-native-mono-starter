@@ -1,0 +1,9 @@
+{
+  "extends": ["universe-error/native"],
+  "globals": {
+    "__dirname": true
+  },
+  "rules": {
+    "prettier/prettier": "error"
+  }
+}

@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react-native';
 
 import View from './component';
 
-const name = '@modules/components/View';
+const name = 'modules/components/View/component';
 
 const load = () => {
   const story = storiesOf(name, module);
@@ -13,7 +13,6 @@ const load = () => {
   story.add('blank', () => {
     return <View />;
   });
-
 };
 
 export { name, load };
