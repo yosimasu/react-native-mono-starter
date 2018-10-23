@@ -4,6 +4,5 @@ module.exports = {
   projectRoot: path.resolve(__dirname, 'storybook'),
   watchFolders: [
     path.resolve(__dirname),
-    path.resolve(__dirname, '..'),
   ],
 };

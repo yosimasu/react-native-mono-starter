@@ -7,7 +7,7 @@
           "module-resolver", {
             "root": ["."],
             "alias": {
-              "^@modules/(.+)": "../modules/\\1"
+              "^@modules/(.+)": "./modules/\\1"
             }
           }
         ]

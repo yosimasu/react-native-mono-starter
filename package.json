@@ -3,36 +3,75 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": ">=8.9.0 <=8.12.0"
+    "node": "8.12.0"
   },
   "workspaces": {
     "packages": [
-      "app",
       "modules/*"
     ]
   },
   "scripts": {
-    "app:clean": "lerna run --scope react-native-app --stream clean",
-    "install:android": "lerna run --scope react-native-app --stream android --",
-    "install:ios": "lerna run --scope react-native-app --stream ios --",
-    "start": "lerna run --scope react-native-app --stream start --",
-    "clean": "lerna run --scope react-native-app --stream clean; lerna clean --yes; shx rm -rf node_modules",
-    "rename": "lerna run --scope react-native-app --stream rename --",
-    "storybook": "lerna run --scope react-native-app --stream storybook --"
+    "clean": "yarn clean:android && yarn clean:ios && lerna clean --yes && shx rm -rf node_modules",
+    "clean:android": "cd android && ./gradlew clean",
+    "clean:ios": "cd ios && shx rm -rf build",
+    "install:android": "react-native run-android",
+    "install:ios": "react-native run-ios",
+    "start": "node node_modules/react-native/local-cli/cli.js start --reset-cache",
+    "rename": "react-native-rename",
+    "storybook": "concurrently \"storybook start -p 7007 --skip-packager\" \"node node_modules/react-native/local-cli/cli.js start --reset-cache --config ../../../../metro.storybook.config.js\"",
+    "lint": "eslint modules --quiet",
+    "precommit": "lint-staged",
+    "prepare": "patch-package",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "16.5.0",
+    "react-native": "0.57.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
     "@babel/runtime": "7.1.2",
+    "@storybook/addon-actions": "3.4.11",
+    "@storybook/addon-links": "3.4.11",
+    "@storybook/addons": "3.4.11",
+    "@storybook/react-native": "3.4.11",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "23.6.0",
     "babel-plugin-module-resolver": "3.1.1",
+    "babel-runtime": "6.26.0",
+    "concurrently": "4.0.1",
     "eslint": "4.19.1",
     "find-root": "1.1.0",
     "fs-extra": "7.0.0",
     "glob": "7.1.3",
     "inquirer-directory": "2.1.0",
+    "jest": "23.6.0",
     "lerna": "3.1.2",
+    "metro-react-native-babel-preset": "0.47.0",
+    "patch-package": "5.1.1",
     "plop": "2.1.0",
+    "postinstall-prepare": "1.0.1",
+    "react-dom": "16.5.0",
+    "react-native-debugger-open": "0.3.17",
+    "react-native-rename": "2.2.2",
+    "react-test-renderer": "16.5.0",
     "require-all": "3.0.0",
     "shelljs": "0.8.2",
     "shx": "0.3.2"
+  },
+  "jest": {
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    },
+    "testMatch": [
+      "**/?(*.)+(test).js?(x)"
+    ]
+  },
+  "lint-staged": {
+    "modules/**/*.js": [
+      "plop collect all",
+      "git add -A"
+    ]
   }
 }
