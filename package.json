@@ -16,12 +16,13 @@
     "clean:ios": "cd ios && shx rm -rf build",
     "install:android": "react-native run-android",
     "install:ios": "react-native run-ios",
-    "start": "node node_modules/react-native/local-cli/cli.js start --reset-cache",
-    "rename": "react-native-rename",
-    "storybook": "concurrently \"storybook start -p 7007 --skip-packager\" \"node node_modules/react-native/local-cli/cli.js start --reset-cache --config ../../../../metro.storybook.config.js\"",
     "lint": "eslint modules --quiet",
+    "postinstall": "rndebugger-open",
     "precommit": "lint-staged",
     "prepare": "patch-package",
+    "rename": "react-native-rename",
+    "start": "node node_modules/react-native/local-cli/cli.js start --reset-cache",
+    "storybook": "concurrently \"storybook start -p 7007 --skip-packager\" \"node node_modules/react-native/local-cli/cli.js start --reset-cache --config ../../../../metro.storybook.config.js\"",
     "test": "jest"
   },
   "dependencies": {
