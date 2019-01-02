@@ -1,6 +1,6 @@
 import React from 'react';
 import { dva } from '@modules/core';
-import { StyleSheet, Text, View } from '@modules/components';
+import { StyleSheet, Text, View } from 'react-native';
 
 import state from './state';
 import features from './features';
